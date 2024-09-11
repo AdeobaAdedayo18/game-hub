@@ -1,0 +1,70 @@
+# Game Hub
+
+**Game Hub** is a web application that serves as a platform to explore various games. It provides users with a comprehensive list of games, including genres and ratings. The app is designed to be fast, interactive, and user-friendly.
+
+### Features
+
+- **Game Listings**: Displays a wide selection of games with details such as title, genre, and ratings.
+- **Game Filtering**: Users can filter games by genre to narrow down their search.
+- **Responsive Design**: Fully responsive for mobile, tablet, and desktop devices.
+- **Modern UI/UX**: Clean and visually appealing interface, built using modern web design practices.
+
+### Technologies Used
+
+- **React**: For building dynamic user interfaces.
+- **JavaScript (ES6)**: Core programming language used in the app.
+- **Vercel**: Used for deployment of the web app.
+- **CSS (Bootstrap)**: Styling the app with Bootstrap to ensure responsiveness and a sleek look.
+
+### Getting Started
+
+To get a local copy of the project up and running, follow these simple steps:
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/your-username/game-hub.git
+   ```
+
+2. **Install dependencies**:
+   Navigate to the project directory and install dependencies.
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the app**:
+   Start the app locally with:
+   ```bash
+   npm start
+   ```
+   The app should now be running on `http://localhost:3000`.
+
+### Project Structure
+
+```
+/src
+  /components
+    GameList.js        # Component that displays the list of games
+    GameDetails.js     # Component that shows detailed information about a selected game
+  /assets
+    images/            # Contains images used in the app
+  App.js               # Main component that holds the app structure
+  index.js             # Entry point of the app
+```
+
+### Deployment
+
+This app is deployed using [Vercel](https://vercel.com/). To deploy your own version:
+
+1. Push your code to a GitHub repository.
+2. Connect the repository to Vercel.
+3. Vercel will automatically handle the build and deployment process.
+
+### Creator
+
+- **Name**: Adedayo Adeoba
+- **University**: Covenant University, Ogun State, Nigeria
+- **Field of Study**: Computer Science
+- **GitHub**: [https://github.com/AdeobaAdedayo18](https://github.com/AdeobaAdedayo18)
+- **LinkedIn**: [https://linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
