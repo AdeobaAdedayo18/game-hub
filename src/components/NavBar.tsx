@@ -4,11 +4,15 @@ import logo from "../assets/bulls-eye.webp";
 import ColourModeSwitch from "./ColourModeSwitch";
 import SearchInput from "./SearchInput";
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack padding={"10px"}>
       <Image src={logo} boxSize={"60px"} marginX={5}></Image>
-      <SearchInput></SearchInput>
+      <SearchInput onSearch={onSearch}></SearchInput>
       <ColourModeSwitch></ColourModeSwitch>
     </HStack>
   );
