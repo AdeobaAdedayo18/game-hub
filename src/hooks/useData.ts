@@ -23,6 +23,7 @@ const useData = <T>(endpoint:string, requestConfig?: AxiosRequestConfig,  deps?:
         apiClients
           .get<FetchResponse<T>>(endpoint, {signal: controller.signal, ...requestConfig})
           .then((res) => {
+            console.log("hello world");
             setData(res.data.results);
             setLoading(false);
             
