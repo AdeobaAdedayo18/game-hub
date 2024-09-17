@@ -25,8 +25,8 @@ export interface Game {
       queryFn: ({pageParam =1}) =>
         apiClient.getAll({
           params: {
-            genres: gameQuery.genre?.id, // Optional genres parameter
-            parent_platforms: gameQuery.platform?.id, // Optional platforms parameter
+            genres: gameQuery.genreId, // Optional genres parameter
+            parent_platforms: gameQuery.platformId, // Optional platforms parameter
             ordering: gameQuery.sortOrder,
             search: gameQuery.searchText,
             page: pageParam

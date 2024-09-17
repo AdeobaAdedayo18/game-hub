@@ -14,7 +14,7 @@ const apiClient = new APIClient<Platform>("/platforms/lists/parents")
 
 const usePlatforms = () => useQuery({
     queryKey: ['platforms'],
-    queryFn: apiClient.getAll,
+    queryFn: apiClient.getAll, 
     staleTime: 24*60*60*1000, //24h
     initialData: {count: platform.length, results: platform}
     //check mosh source code to get initial data from here
