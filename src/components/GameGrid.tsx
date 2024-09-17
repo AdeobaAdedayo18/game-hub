@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from "react";
-import apiClients from "../services/api-clients";
-import {
-  Card,
-  CardBody,
-  Heading,
-  HStack,
-  Image,
-  SimpleGrid,
-  Skeleton,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import useGames, { Platform } from "../hooks/useGames";
-import GameCard from "./GameCard";
-import GameCardSkeleton from "./GameCardSkeleton";
-import GameCardContainer from "./GameCardContainer";
-import { Genre } from "../hooks/useGenres";
+import { Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { GameQuery } from "../App";
 import failure from "../assets/gray orange minimalist controller video game logo design (2).svg";
+import useGames from "../hooks/useGames";
+import GameCard from "./GameCard";
+import GameCardContainer from "./GameCardContainer";
+import GameCardSkeleton from "./GameCardSkeleton";
 
 interface Props {
   gameQuery: GameQuery;

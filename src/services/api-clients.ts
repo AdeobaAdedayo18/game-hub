@@ -5,6 +5,8 @@ export interface FetchResponse<T>{
     results: T[]
 }
 
+
+
 export default axios.create({
     
     baseURL: "https://api.rawg.io/api",
