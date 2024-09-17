@@ -42,7 +42,7 @@ const GameGrid = ({ gameQuery }: Props) => {
         </Text>
       </VStack>
     );
-  // if (error) return <Text>{error}</Text>;
+  if (error) return <Text>{error}</Text>;
   return (
     <SimpleGrid
       columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
@@ -55,7 +55,7 @@ const GameGrid = ({ gameQuery }: Props) => {
             <GameCardSkeleton></GameCardSkeleton>
           </GameCardContainer>
         ))}
-      {data.map((d) => (
+      {data?.results.map((d) => (
         <GameCardContainer key={d.id}>
           {" "}
           <GameCard game={d}></GameCard>

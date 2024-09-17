@@ -1,7 +1,7 @@
-
+import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
-import useData from "./useData";
-import { Genre } from "./useGenres";
+import apiClients from "../services/api-clients";
+import { FetchResponse } from "../services/api-clients"
 
 
 
@@ -9,7 +9,6 @@ export interface Platform {
   id: number;
   name: string;
   slug: string;
-  platforms?: Platform[];  
 }
 
 export interface Game {
@@ -23,30 +22,23 @@ export interface Game {
   }
   
  
-  const useGames = (gameQuery: GameQuery) => {
-    let platformsParam: string | undefined; // Initialize platformsParam as undefined
-  
-    if (gameQuery.platform) {
-      if (gameQuery.platform.id === 2) {
-        platformsParam = "187,18,16,15,27,19,17"; // Special case for PlayStation (id=2)
-      } else {
-        platformsParam = String(gameQuery.platform.id); // Convert id to string
-      }
-    }
-  
-    return useData<Game>(
-      "/games",
-      {
-        params: {
-          genres: gameQuery.genre?.id, // Optional genres parameter
-          platforms: platformsParam, // Optional platforms parameter
-          ordering: gameQuery.sortOrder,
-          search: gameQuery.searchText,
-        },
-      },
-      [gameQuery]
-    );
-  };
+  const useGames = (gameQuery: GameQuery) => 
+    useQuery<FetchResponse<Game>, Error>({
+      queryKey: ["games", gameQuery],
+      queryFn: () =>
+        apiClients.get<FetchResponse<Game>>("/games", {
+          params: {
+            genres: gameQuery.genre?.id, // Optional genres parameter
+            parent_platforms: gameQuery.platform?.id, // Optional platforms parameter
+            ordering: gameQuery.sortOrder,
+            search: gameQuery.searchText,
+          },
+        })
+        .then(res => res.data)
+    })
+
+   
+
 
 
 export default useGames
